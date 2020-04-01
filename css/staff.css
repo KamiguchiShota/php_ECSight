@@ -1,0 +1,130 @@
+@charset 'utf-8';
+
+/* 基本要素の指定 */
+body {
+      width: 1040px;
+      background-color: #eff0f4;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    /*---------共通部分・上の紺色のところ---------------*/
+    .login_name {
+      width: 1040px;
+      height: 50px;
+      background-color: #2e4c51;
+      display: flex; /*flexboxはまず最初にdisplay:flexをする*/
+      /*justify-content: center;*/ /*幅を真ん中*/
+      align-items: center; /*上下を真ん中*/
+    }
+    
+    .login_name h1 {
+      float: left;
+      padding-left: 10px;
+      margin: 0;
+      font-size: 20px;
+      width: 1000px;
+    }
+    
+    .login_name h2 {
+      width: 300px;
+      margin: 0;
+      font-size: 18px;
+      text-align: right;
+    }
+    
+    /*ログイン中の名前を表示*/
+    .login_name {
+      color: #fff;
+    }
+    
+    /*---------------------------------------*/
+    
+    
+    /*-----------共通部分leftmenu----------------*/
+    .leftmenu {
+      width: 200px;
+      height: auto;
+    }
+
+    .leftmenu h3 {
+      margin: 0;
+      padding-left: 10px;
+      font-size: 18px;
+    }
+    
+    
+    .leftmenu ul {
+      margin: 0;
+      padding: 0;
+      width: 210px;
+      
+    }
+    
+    .staff1,.staff2,.staff3,.staff4,.staff5,.staff6 {
+      margin-bottom: -25px;
+      width: 200px;
+      height: 30px;
+      background-color: #f3f4f6;
+      border: solid 1px #d8d8e5;
+      display: flex; /*flexboxはまず最初にdisplay:flexをする*/
+      /*justify-content: center;*/ /*幅を真ん中*/
+      align-items: center; /*上下を真ん中*/
+      list-style: none;
+      padding-left: 10px;
+    }
+    
+    .staff1:hover {
+      background-color: #fff;
+      
+    }
+    .staff2:hover {
+      background-color: #fff;
+    }
+    .staff3:hover {
+      background-color: #fff;
+    }
+    .staff4:hover {
+      background-color: #fff;
+    }
+    .staff5:hover {
+      background-color: #fff;
+    }
+    .staff6:hover {
+      background-color: #fff;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+      
+    }
+    
+    .enpty {
+      height: 260px;
+      width: 210px;
+      border: solid 1px #d8d8e5;
+    }
+    
+   /*-----------------------------------------------------*/
+
+  /*----------------------staff_add----------------------*/
+               /*CSS使えない為、HTMLに記述済み*/
+  /*-----------------------------------------------------*/
+
+
+
+
+
+  /*-----------------------product_delete------------------------*/
+  /*-------------------------------------------------------------*/
+
+
+  /*-----------------------staff_edit------------------------*/
+                /*cssにかけなかった為、HTMLに記述*/
+  /*-------------------------------------------------------------*/
+
+  
+
+
+
+

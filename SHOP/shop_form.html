@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>注文フォーム</title>
+</head>
+<script>
+  function Focus(){
+    document.myform.mail.focus()
+  }
+</script>
+<style>
+  body {
+    width: 1040px;
+    height: auto;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Hiragino Kaku Gothic Pro W3","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+    background: url(../images/shop_background.png)no-repeat fixed; 
+    background-size: cover;
+    
+  }
+  
+  /*-----navigation全体-----*/
+  .navigation {
+    width: 1040px;
+    height: 120px;
+    z-index: 999;
+    color: #fff;
+    margin: 25px 0 50px 0;
+  }
+  
+  .navigation a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navigation a:hover {
+    color: #2886bf;
+  }
+  
+/*------navigation タイトル名・logo、login_name-----*/
+  li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 15px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0
+  }
+  
+  .logo {
+    width: 120px;
+    height: auto;
+    float: left;
+  }
+  
+  .company_logo {
+    width: 270px;
+    z-index: 999;
+    float: left;
+    padding-top: 80px;
+  }
+  
+/*-----フォーム-----*/
+  
+  form {
+    width: 530px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .newmember {
+    width: 1040px;
+    margin: 0 auto;
+  }
+  
+  .newmember h1 {
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: 300;
+    text-align: left;
+  }
+  
+  .newmember p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  /*-----input type="text"全てにmarginで余白を作る-----*/
+  .form_input {
+    margin-bottom: 20px;
+  }
+  
+  /*-----inputの各タイトル-----*/
+  form h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+  }
+  
+  input {
+    background-color: #f9f9f9;
+  }
+  
+  /*-----名前：漢字-----*/
+  .name {
+    width: 160px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  /*-----名前：フリガナ-----*/
+  .huri {
+    width: 160px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  /*-----郵便番号-----*/
+  .postal1 {
+    width: 70px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  .postal2 {
+    width: 70px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  /*-----住所-----*/
+  .prefectures1{
+    width: 160px;
+    height: 32px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+    margin-bottom: 12px;
+  }
+  
+  .Prefectures2 {
+    width: 300px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+    margin-bottom: 12px;
+  }
+  
+  .Prefectures3 {
+    width: 465px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  /*-----電話番号-----*/
+  .tel {
+    width: 70px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  } 
+  
+  /*-----メールアドレス-----*/
+  .mail {
+    width: 360px;
+    height: 28px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  /*------会員登録するかしないか-----*/
+  .radio p{
+    margin: 0;
+  }
+  
+  .radio h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+  }
+  
+  /*-----会員登録する場合-----*/
+  .register p {
+    margin: 15px 0 5px 0;
+  }
+  
+  /*-----password-----*/
+  .input_pass {
+    margin-bottom: 5px;
+  }
+  
+  .input_pass2 {
+    margin-bottom: 20px;
+  }
+  
+  .pass {
+    width: 100px;
+    height: 20px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  .pass2 {
+    width: 100px;
+    height: 20px;
+    padding: 1px 8px;
+    border: solid #f9f9f9 1px;
+  }
+  
+  /*-----性別-----*/
+  .gender {
+    margin-bottom: 20px;
+  }
+  
+  .gender p{
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  /*-----生年月日-----*/
+  .birthday {
+    margin-bottom: 20px;
+  }
+
+  select {
+    width: 70px;
+    height: 24px;
+    margin-right: 5px;
+  }
+  /*-----nect submit-----*/
+  .next_div {
+    width: 530px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .next {
+    width: 200px;
+    height: 32px;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(40,134,191,0.8);
+    margin-top: 20px;
+    margin-left: 160px;
+    border: 0;
+  }
+  
+  .next:hover {
+    background-color: rgba(40,134,191,1.0);
+    transition: all 1s ease;
+    color: #fff;
+  }
+  
+  .ichiro_right {
+    float: right;
+    margin-top: -1000px;
+    margin-right: -150px;
+  }
+  
+  .iguchi {
+    width: 380px;
+    margin-top: -300px;
+    margin-left: -140px;
+  }
+  
+  /*-----footer-----*/
+  footer {
+    font-size: 15px;
+    color: #fff;
+    width: 1040px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+  
+</style>
+<body>
+  <nav class="navigation">
+    <a href="../SHOP/shop_list.php"><img src="../images/logo.png" class="logo"></a>
+    <img src="../images/logo2.png" class="company_logo">
+  </nav>
+  
+  <form method="post" action="shop_form_check.php">
+    
+  <div class="newmember">
+  <h1>はじめての方・会員登録されていない方</h1>
+  <p>※会員登録なしでもお買い物が可能です。</p>
+  </div>
+  
+  <div class="form_input">
+    <h3>氏名</h3>
+    <input type="text" name="name1" placeholder="姓" class="name">
+    <input type="text" name="name2" placeholder="名" class="name">
+  </div>
+    
+  <div class="form_input">
+    <h3>フリガナ</h3>
+    <input type="text" name="huri1" placeholder="セイ" class="huri">
+    <input type="text" name="huri2" placeholder="メイ" class="huri">
+  </div>
+    
+  <div class="form_input">
+    <h3>郵便番号</h3>
+    <input type="text" name="postal1" placeholder="123" class="postal1"> ー
+    <input type="text" name="postal2" placeholder="4567" class="postal2">
+  </div>
+    
+  <div class="form_input">
+  <h3>住所</h3>
+    <select class="prefectures1" name="prefectures1">
+          <option value="">選択してください。</option>
+          <optgroup label="北海道・東北">
+          <option value="北海道">北海道</option>
+          <option value="青森県">青森県</option>
+          <option value="秋田県">秋田県</option>
+          <option value="岩手県">岩手県</option>
+          <option value="山形県">山形県</option>
+          <option value="宮城県">宮城県</option>
+          <option value="福島県">福島県</option>
+          </optgroup>
+          <optgroup label="甲信越・北陸">
+          <option value="山梨県">山梨県</option>
+          <option value="長野県">長野県</option>
+          <option value="新潟県">新潟県</option>
+          <option value="富山県">富山県</option>
+          <option value="石川県">石川県</option>
+          <option value="福井県">福井県</option>
+          </optgroup>
+          <optgroup label="関東">
+          <option value="茨城県">茨城県</option>
+          <option value="栃木県">栃木県</option>
+          <option value="群馬県">群馬県</option>
+          <option value="埼玉県">埼玉県</option>
+          <option value="千葉県">千葉県</option>
+          <option value="東京都">東京都</option>
+          <option value="神奈川県">神奈川県</option>
+          </optgroup>
+          <optgroup label="東海">
+          <option value="愛知県">愛知県</option>
+          <option value="静岡県">静岡県</option>
+          <option value="岐阜県">岐阜県</option>
+          <option value="三重県">三重県</option>
+          </optgroup>
+          <optgroup label="関西">
+          <option value="大阪府">大阪府</option>
+          <option value="兵庫県">兵庫県</option>
+          <option value="京都府">京都府</option>
+          <option value="滋賀県">滋賀県</option>
+          <option value="奈良県">奈良県</option>
+          <option value="和歌山県">和歌山県</option>
+          </optgroup>
+          <optgroup label="中国">
+          <option value="岡山県">岡山県</option>
+          <option value="広島県">広島県</option>
+          <option value="鳥取県">鳥取県</option>
+          <option value="島根県">島根県</option>
+          <option value="山口県">山口県</option>
+          </optgroup>
+          <optgroup label="四国">
+          <option value="徳島県">徳島県</option>
+          <option value="香川県">香川県</option>
+          <option value="愛媛県">愛媛県</option>
+          <option value="高知県">高知県</option>
+          </optgroup>
+          <optgroup label="九州・沖縄">
+          <option value="福岡県">福岡県</option>
+          <option value="佐賀県">佐賀県</option>
+          <option value="長崎県">長崎県</option>
+          <option value="熊本県">熊本県</option>
+          <option value="大分県">大分県</option>
+          <option value="宮崎県">宮崎県</option>
+          <option value="鹿児島県">鹿児島県</option>
+          <option value="沖縄県">沖縄県</option>
+          </optgroup>
+        </select>
+    
+    <input type="text" name="prefectures2" placeholder="市区町村" class="Prefectures2"><br>
+    <input type="text" name="prefectures3" placeholder="以降の住所" class="Prefectures3">
+    </div>
+    
+    <div class="form_input">
+    <h3>電話番号</h3>
+    <input type="text" name="tel1" placeholder="000" class="tel"> ー
+    <input type="text" name="tel2" placeholder="0000" class="tel"> ー
+    <input type="text" name="tel3" placeholder="0000" class="tel">
+    </div>
+    
+    <div class="form_input">
+    <h3>メールアドレス</h3>
+    <input type="text" name="mail" placeholder="mailaddress@mail.com" class="mail">
+    </div>
+    
+    <!--checkedは最初から選択してくれる-->
+    <div class="radio">
+    <h4>会員登録（年会費無料）</h4>
+    <p><input type="radio" name="order" value="order_this_time" checked>会員登録しないで注文</p>
+    <p><input type="radio" name="order" value="member_registration">会員登録しての注文</p>
+    </div>
+   
+    <div class="register">
+    <p>※会員登録する方は以下の項目も入力して下さい。</p>
+    
+    <div class="input_pass">
+    <h3>パスワードを入力して下さい。</h3>
+    <input type="password" name="pass" class="pass">
+    </div>
+    
+    <div class="input_pass2">
+    <h3>パスワードをもう一度入力して下さい。</h3>
+    <input type="password" name="pass2" class="pass2">
+    </div>
+    
+    <div class="gender">
+    <h3>性別</h3>
+    <p><input type="radio" name="gen" value="男性" checked>男</p>
+    <p><input type="radio" name="gen" value="女性">女</p>
+    <p><input type="radio" name="gen" value="その他">その他</p>
+    </div>
+    
+    <div class="birthday">
+    <h3>生年月日</h3>
+    <select name="year">
+      <option value="" style="display: none;" name=""></option>
+      <option value="1950">1950</option>
+      <option value="1950">1950</option>
+      <option value="1951">1951</option>
+      <option value="1952">1952</option>
+      <option value="1953">1953</option>
+      <option value="1954">1954</option>
+      <option value="1955">1955</option>
+      <option value="1956">1956</option>
+      <option value="1957">1957</option>
+      <option value="1958">1958</option>
+      <option value="1959">1959</option>
+      <option value="1960">1960</option>
+      <option value="1961">1961</option>
+      <option value="1962">1962</option>
+      <option value="1963">1963</option>
+      <option value="1964">1964</option>
+      <option value="1965">1965</option>
+      <option value="1966">1966</option>
+      <option value="1967">1967</option>
+      <option value="1968">1968</option>
+      <option value="1969">1969</option>
+      <option value="1970">1970</option>
+      <option value="1971">1971</option>
+      <option value="1972">1972</option>
+      <option value="1973">1973</option>
+      <option value="1974">1974</option>
+      <option value="1975">1975</option>
+      <option value="1976">1976</option>
+      <option value="1977">1977</option>
+      <option value="1978">1978</option>
+      <option value="1979">1979</option>
+      <option value="1980">1980</option>
+      <option value="1981">1981</option>
+      <option value="1982">1982</option>
+      <option value="1983">1983</option>
+      <option value="1984">1984</option>
+      <option value="1985">1985</option>
+      <option value="1986">1986</option>
+      <option value="1987">1987</option>
+      <option value="1988">1988</option>
+      <option value="1989">1989</option>
+      <option value="1990">1990</option>
+      <option value="1991">1991</option>
+      <option value="1992">1992</option>
+      <option value="1993">1993</option>
+      <option value="1994">1994</option>
+      <option value="1995">1995</option>
+      <option value="1996">1996</option>
+      <option value="1997">1997</option>
+      <option value="1998">1998</option>
+      <option value="1999">1999</option>
+      <option value="2000">2000</option>
+      <option value="2001">2001</option>
+      <option value="2002">2002</option>
+      <option value="2003">2003</option>
+      <option value="2004">2004</option>
+      <option value="2005">2005</option>
+      <option value="2006">2006</option>
+      <option value="2007">2007</option>
+      <option value="2008">2008</option>
+      <option value="2009">2009</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+    </select>年
+    
+    <select name="month">
+      <option value="" style="display: none;" name=""></option>
+      <option value="01">01</option>
+      <option value="02">02</option>
+      <option value="03">03</option>
+      <option value="04">04</option>
+      <option value="05">05</option>
+      <option value="06">06</option>
+      <option value="07">07</option>
+      <option value="08">08</option>
+      <option value="09">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>月
+    
+    <select name="day">
+        <option value="" style="display: none;" name=""></option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>日
+      </div>
+    </div>
+    
+    
+    <div class="next_div">
+    <input type="submit" value="次へ進む" class="next">
+    </div>
+    
+  </form>
+  <img src="../images/ICHIRO2.png" class="ichiro_right">
+  <img src="../images/IGUCHI.png" class="iguchi">
+  <footer>
+    <span>© 2020 SHOTA KAMIGUCHI</span>
+  </footer>
+</body>
+
+
+
+
+
+
+
+
+
